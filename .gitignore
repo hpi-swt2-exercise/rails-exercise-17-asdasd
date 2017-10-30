@@ -16,3 +16,6 @@
 !/log/.keep
 /tmp
 /nbproject
+
+# Ignore IDEA
+/.idea/*
