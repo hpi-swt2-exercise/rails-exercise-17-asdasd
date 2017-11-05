@@ -14,4 +14,18 @@ describe "New author page", type: :feature do
     expect(page).to have_field('Homepage')
   end
 
+  it "should save a new author" do
+    visit new_author_path
+
+    fill_in 'author_first_name', with: 'Alan'
+    fill_in 'author_last_name', with: 'Turing'
+    fill_in 'author_homepage', with: 'http://wikipedia.org/Alan_Turing'
+    find('input[type="submit"]').click
+
+    author = Author.find_by(first_name: 'Alan', last_name: 'Turing', homepage: 'http://wikipedia.org/Alan_Turing')
+
+    expect(author).to_not be_nil
+
+  end
+
 end
