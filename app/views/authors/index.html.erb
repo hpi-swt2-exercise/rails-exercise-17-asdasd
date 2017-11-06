@@ -1,1 +1,7 @@
-<h1>Authors index page</h1>
+<h1>Index Authors page</h1>
+<ul class="author-list">
+  <% @authors.each do |author| %>
+      <li>Name: <%= author.name %></li>
+      <li>Homepage: <%= author.homepage %></li>
+  <% end %>
+</ul>
