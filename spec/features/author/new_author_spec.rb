@@ -28,4 +28,15 @@ describe "New author page", type: :feature do
 
   end
 
+  it "should not validate without last name" do
+    visit new_author_path
+
+    fill_in 'author_first_name', with: 'Alan'
+    fill_in 'author_last_name', with: ''
+    fill_in 'author_homepage', with: 'http://wikipedia.org/Alan_Turing'
+    find('input[type="submit"]').click
+
+    expect(page).to have_text("Last name can't be blank")
+  end
+
 end
