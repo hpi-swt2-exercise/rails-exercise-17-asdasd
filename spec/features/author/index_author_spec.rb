@@ -13,4 +13,10 @@ describe "Index author page", type: :feature do
 
   end
 
+  it "should have a column titled 'Name'" do
+
+    visit authors_path
+    expect(page).to have_css("th", :text => "Name")
+  end
+
 end
