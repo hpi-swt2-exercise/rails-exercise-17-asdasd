@@ -25,4 +25,11 @@ describe "Index author page", type: :feature do
 
   end
 
+  it "should have a link to the author detail page" do
+
+    visit authors_path
+    expect(page).to have_css("a", :text => "Show")
+
+  end
+
 end
