@@ -9,14 +9,20 @@ describe "Index author page", type: :feature do
     visit authors_path
     expect(page).to have_text(author.name)
 
-    puts page.body
-
   end
 
   it "should have a column titled 'Name'" do
 
     visit authors_path
     expect(page).to have_css("th", :text => "Name")
+
+  end
+
+  it "should have a link to the new author page" do
+
+    visit authors_path
+    expect(page).to have_css("a", :text => "Add author")
+
   end
 
 end
