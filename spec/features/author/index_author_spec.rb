@@ -2,9 +2,15 @@ require 'rails_helper'
 
 describe "Index author page", type: :feature do
 
-  it "should render all authors with name and homepage" do
+  it "should display authors with name and homepage" do
+
+    author = FactoryGirl.create :author
+
     visit authors_path
-    expect(find('.author-list')).to have_content("Alan Turing")
+    expect(page).to have_text(author.name)
+
+    puts page.body
+
   end
 
 end
