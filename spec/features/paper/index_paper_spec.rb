@@ -47,4 +47,13 @@ describe "Index paper page", type: :feature do
 
   end
 
+  it "should be able to filter by year" do
+
+    paper = FactoryGirl.create :paper
+    visit papers_path+"?year=#{paper.year+1}"
+
+    expect(page).not_to have_text(paper.title)
+
+  end
+
 end
