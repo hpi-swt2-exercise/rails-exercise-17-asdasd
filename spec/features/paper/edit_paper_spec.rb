@@ -17,4 +17,12 @@ describe "Edit paper page", type: :feature do
     find('input[type="submit"]').click
   end
 
+  it "should have select with author options" do
+
+    paper = FactoryGirl.create :paper
+    visit edit_paper_path(paper)
+
+    expect(page).to have_css("label", :text => "Author 1")
+  end
+
 end

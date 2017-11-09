@@ -30,6 +30,13 @@
         <%= form.text_field :year %>
     </p>
 
+    <% 5.times do |i| %>
+        <%= form.label "Author #{i+1}", for: "paper_author_id_#{i+1}" %>
+        <%= form.collection_select :author_ids, Author.all, :id, :name,
+                                {selected: @paper.author_ids[i], include_blank: '(none)'},
+                                {name: "paper[author_ids][]", id: "paper_author_id_#{i+1}"} %>
+    <% end %>
+
     <p>
         <%= form.submit %>
     </p>
