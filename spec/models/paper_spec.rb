@@ -1,7 +1,10 @@
 require 'rails_helper'
 
-=begin
 RSpec.describe Paper, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "should have an empty list of authors" do
+    paper = Paper.new
+    expect(paper.authors).to be_nil
+  end
+
 end
-=end
