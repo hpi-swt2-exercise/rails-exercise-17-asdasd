@@ -25,4 +25,15 @@ describe "New paper page", type: :feature do
     expect(page).to have_text("Title can't be blank")
   end
 
+  it "should not validate without venue" do
+    visit new_paper_path
+
+    fill_in 'paper_title', with: 'computing machinery and intelligence'
+    fill_in 'paper_venue', with: ''
+    fill_in 'paper_year', with: 1950
+    find('input[type="submit"]').click
+
+    expect(page).to have_text("Venue can't be blank")
+  end
+
 end
