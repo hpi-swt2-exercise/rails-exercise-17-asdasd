@@ -14,4 +14,15 @@ describe "New paper page", type: :feature do
     expect(page).to have_field('Year')
   end
 
+  it "should not validate without title" do
+    visit new_paper_path
+
+    fill_in 'paper_title', with: ''
+    fill_in 'paper_venue', with: 'mind 49: 433-460'
+    fill_in 'paper_year', with: 1950
+    find('input[type="submit"]').click
+
+    expect(page).to have_text("Title can't be blank")
+  end
+
 end
