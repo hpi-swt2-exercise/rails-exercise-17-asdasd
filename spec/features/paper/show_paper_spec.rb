@@ -18,8 +18,6 @@ describe "Show paper page", type: :feature do
 
     visit paper_path(paper)
 
-    puts paper.authors.inspect
-
     expect(page).to have_text(paper.authors.first.name)
 
   end
