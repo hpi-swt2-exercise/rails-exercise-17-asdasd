@@ -7,4 +7,14 @@ describe "Edit paper page", type: :feature do
     visit edit_paper_path(paper)
   end
 
+  it "should save changes for a given paper" do
+    paper = FactoryGirl.create :paper
+    visit edit_paper_path(paper)
+
+    fill_in "paper_title", :with => paper.title
+    fill_in "paper_venue", :with => 'Mind 49'
+    fill_in "paper_year", :with => paper.year
+    find('input[type="submit"]').click
+  end
+
 end
