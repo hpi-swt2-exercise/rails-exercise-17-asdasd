@@ -4,11 +4,15 @@ class PapersController < ApplicationController
     @papers = Paper.all
   end
 
+  def show
+    @paper = Paper.find(params[:id])
+  end
+
   def new
     @paper = Paper.new
   end
 
-  def show
+  def edit
     @paper = Paper.find(params[:id])
   end
 
