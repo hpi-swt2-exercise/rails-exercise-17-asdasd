@@ -7,6 +7,8 @@ RSpec.describe Paper, type: :model do
     paper = Paper.new
     expect(paper.authors).to be_empty
 
+    puts paper.inspect
+
   end
 
 end
