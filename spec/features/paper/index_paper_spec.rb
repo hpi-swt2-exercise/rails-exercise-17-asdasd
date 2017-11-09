@@ -43,6 +43,8 @@ describe "Index paper page", type: :feature do
     visit papers_path
     expect(page).to have_css("a", :text => "Destroy")
 
+    click_on 'Destroy'
+
   end
 
 end
