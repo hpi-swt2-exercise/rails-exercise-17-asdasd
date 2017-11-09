@@ -1,6 +1,6 @@
 class Paper < ActiveRecord::Base
 
-  has_and_belongs_to_many :authors
+  has_many :authors
 
   validates :title, presence: true
   validates :venue, presence: true
