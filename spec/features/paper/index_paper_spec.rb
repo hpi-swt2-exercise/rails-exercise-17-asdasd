@@ -36,4 +36,13 @@ describe "Index paper page", type: :feature do
 
   end
 
+  it "should have a link to delete the paper" do
+
+    paper = FactoryGirl.create :paper
+
+    visit papers_path
+    expect(page).to have_css("a", :text => "Destroy")
+
+  end
+
 end
