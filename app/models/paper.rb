@@ -1,5 +1,7 @@
 class Paper < ActiveRecord::Base
 
+  scope :published_in, ->(year) { where("year == ?", year)}
+
   has_many :authorships
   has_many :authors, through: :authorships
 
