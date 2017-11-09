@@ -5,7 +5,7 @@ class PapersController < ApplicationController
   end
 
   def new
-
+    @paper = Paper.new
   end
 
 end
