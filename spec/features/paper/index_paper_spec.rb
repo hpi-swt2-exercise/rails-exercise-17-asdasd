@@ -23,7 +23,7 @@ describe "Index paper page", type: :feature do
     paper = FactoryGirl.create :paper
 
     visit papers_path
-    expect(page).to have_css("a", :text => "show")
+    expect(page).to have_css("a", :text => "Show")
 
   end
 
